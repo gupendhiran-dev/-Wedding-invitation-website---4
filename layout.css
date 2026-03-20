@@ -1,0 +1,714 @@
+/* ═══════════════════════════════════════════════════════════════
+   PIXAR WEDDING — layout.css
+   Scene layouts, grids, component structure
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── SCENES ──────────────────────────────────────────────────── */
+.scene {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--section-pad) clamp(1.5rem, 6vw, 5rem);
+  overflow: hidden;
+}
+
+.scene-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.scene-content.centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.scene-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── SCENE BACKGROUNDS ───────────────────────────────────────── */
+.scene-intro {
+  background: linear-gradient(
+    160deg,
+    #1a0a2e 0%,
+    #2d1550 25%,
+    #5c2d6e 50%,
+    #c06080 75%,
+    #d4a853 100%
+  );
+  color: white;
+  min-height: 100svh;
+}
+
+.scene-flowers {
+  background: linear-gradient(
+    180deg,
+    #fdf0f5 0%,
+    #f8e8d0 50%,
+    #f0e0c8 100%
+  );
+}
+
+.scene-met {
+  background: linear-gradient(
+    135deg,
+    #2a1a3e 0%,
+    #1a2a4e 50%,
+    #0a1a3e 100%
+  );
+  color: white;
+  position: relative;
+}
+
+.scene-park {
+  background: linear-gradient(
+    160deg,
+    #e8f5e8 0%,
+    #d0e8d0 40%,
+    #c8dfc8 100%
+  );
+}
+
+.scene-proposal {
+  background: var(--night);
+  color: white;
+}
+
+.scene-date {
+  background: linear-gradient(
+    135deg,
+    var(--ivory) 0%,
+    var(--ivory-dark) 100%
+  );
+}
+
+.scene-events {
+  background: linear-gradient(
+    160deg,
+    #fdf8f0 0%,
+    #f5ecd8 100%
+  );
+}
+
+.scene-photos {
+  background: var(--charcoal);
+  color: white;
+}
+
+.scene-venue {
+  background: linear-gradient(160deg, #eef5ee 0%, #e0f0e0 100%);
+}
+
+.scene-rsvp {
+  background: linear-gradient(
+    135deg,
+    #fdf0f5 0%,
+    #f8e8e8 50%,
+    #f0e8d0 100%
+  );
+}
+
+.scene-finale {
+  background: linear-gradient(
+    160deg,
+    #0a0820 0%,
+    #1a0a2e 30%,
+    #2d1550 60%,
+    #5c2d6e 85%,
+    #c06080 100%
+  );
+  color: white;
+}
+
+/* ── INTRO SCENE ─────────────────────────────────────────────── */
+.couple-names {
+  font-family: var(--font-script);
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--gold-light);
+  text-shadow: 0 0 60px rgba(212,168,83,0.6), 0 2px 4px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.name-one, .name-two {
+  display: block;
+}
+
+.ampersand {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.4em;
+  color: var(--rose);
+  opacity: 0.9;
+  line-height: 1;
+  margin: -0.2em 0;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.05em;
+}
+
+.scene-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ── STORY CARD (Scene 2) ────────────────────────────────────── */
+.story-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.photo-frame {
+  position: relative;
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius-card);
+  opacity: 0.4;
+  transform: rotate(2deg);
+}
+
+.photo-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: var(--radius-card);
+  background: linear-gradient(135deg, var(--lavender) 0%, var(--rose) 50%, var(--gold-light) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.photo-proposal {
+  width: 320px;
+  aspect-ratio: 4/5;
+  margin: 0 auto;
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* ── HOW WE MET GRID (Scene 3) ───────────────────────────────── */
+.met-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.met-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-card);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s var(--ease-smooth), background 0.3s ease;
+}
+
+.met-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.1);
+}
+
+.met-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.met-card p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+}
+
+/* ── MILESTONES (Scene 4) ────────────────────────────────────── */
+.milestones {
+  margin-top: 3rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.milestones::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.8rem;
+  bottom: 0.8rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--rose));
+}
+
+.milestone {
+  display: grid;
+  grid-template-columns: 4.5rem 1.2rem 1fr;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.milestone-year {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-align: right;
+}
+
+.milestone-dot {
+  width: 14px;
+  height: 14px;
+  background: var(--gold);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--gold);
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+}
+
+.milestone-desc {
+  font-size: 1rem;
+  color: var(--charcoal);
+}
+
+/* ── PROPOSAL (Scene 5) ──────────────────────────────────────── */
+.stars-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.proposal-headline {
+  color: white;
+  text-shadow: 0 0 40px rgba(212,168,83,0.3);
+}
+
+.she-said-yes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.yes-text {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+.yes-word {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: var(--gold-light);
+  text-shadow: 0 0 40px rgba(212,168,83,0.8);
+}
+
+/* ── COUNTDOWN (Scene 6) ─────────────────────────────────────── */
+.wedding-date-display {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--charcoal);
+}
+
+.date-sep {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.date-month {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.countdown-wrapper {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  background: white;
+  border-radius: 16px;
+  padding: 1.2rem 1.6rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  min-width: 80px;
+}
+
+.countdown-num {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.5;
+}
+
+/* ── EVENTS (Scene 7) ────────────────────────────────────────── */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.event-card {
+  background: white;
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(212,168,83,0.2);
+  transition: transform 0.3s var(--ease-smooth), box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+.event-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.event-time { font-size: 0.85rem; color: var(--gold); font-weight: 500; margin-top: 0.8rem; }
+.event-venue { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--charcoal); margin-top: 0.3rem; }
+.event-addr { font-size: 0.85rem; color: var(--charcoal); opacity: 0.6; margin-top: 0.3rem; }
+
+/* ── GALLERY (Scene 8) ───────────────────────────────────────── */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+}
+
+.gallery-item {
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.gallery-item:nth-child(2) { margin-top: 2rem; }
+.gallery-item:nth-child(5) { margin-top: -2rem; }
+
+.gallery-photo {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, var(--lavender), var(--rose), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  transition: transform 0.4s var(--ease-smooth);
+}
+
+.gallery-item:nth-child(even) .gallery-photo {
+  background: linear-gradient(135deg, var(--sage), var(--gold-light));
+}
+
+.gallery-item:hover .gallery-photo { transform: scale(1.04); }
+
+/* ── LIGHTBOX ────────────────────────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background: rgba(0,0,0,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.lightbox-close:hover { opacity: 1; }
+
+.lightbox-img {
+  max-width: 80vw;
+  max-height: 80vh;
+  aspect-ratio: 4/5;
+  width: 400px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--lavender), var(--rose), var(--gold-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ── VENUE (Scene 9) ─────────────────────────────────────────── */
+.venue-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.venue-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.venue-info h3 {
+  font-size: 1.4rem;
+  color: var(--charcoal);
+}
+
+.venue-info p {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  line-height: 1.7;
+}
+
+.venue-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--gold);
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+.venue-link:hover { transform: translateX(4px); }
+
+.map-container { border-radius: 16px; overflow: hidden; }
+
+/* ── RSVP (Scene 10) ─────────────────────────────────────────── */
+.rsvp-card {
+  background: white;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.1);
+  max-width: 560px;
+  width: 100%;
+  border: 1px solid rgba(212,168,83,0.15);
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.field-group label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  opacity: 0.6;
+}
+
+.field-group input,
+.field-group textarea {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--charcoal);
+  background: var(--ivory);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+  resize: none;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(212,168,83,0.15);
+}
+
+.attend-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.attend-btn {
+  padding: 0.85rem 1rem;
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--ivory);
+  color: var(--charcoal);
+  transition: all 0.25s ease;
+}
+
+.attend-btn.active {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: white;
+}
+
+.attend-btn:hover:not(.active) {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ── RSVP SUCCESS ────────────────────────────────────────────── */
+.rsvp-success {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 0;
+}
+
+.success-icon {
+  font-size: 3rem;
+  animation: successBounce 0.6s var(--ease-bounce);
+}
+
+@keyframes successBounce {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+/* ── FINALE (Scene 11) ───────────────────────────────────────── */
+.finale-names {
+  font-family: var(--font-script);
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: var(--gold-light);
+  text-shadow: 0 0 40px rgba(212,168,83,0.5);
+  line-height: 1;
+}
+
+.finale-date {
+  font-size: 1rem;
+  letter-spacing: 0.25em;
+  opacity: 0.5;
+}
+
+.finale-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.fireworks-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEART BURST ─────────────────────────────────────────────── */
+.heart-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .story-card { grid-template-columns: 1fr; gap: 2rem; }
+  .met-grid { grid-template-columns: 1fr; }
+  .events-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(5) { margin-top: 0; }
+  .venue-split { grid-template-columns: 1fr; }
+  .rsvp-card { padding: 2rem 1.5rem; }
+  .countdown-wrapper { gap: 0.75rem; }
+  .countdown-unit { padding: 1rem 1.1rem; min-width: 64px; }
+  .milestone { grid-template-columns: 3.5rem 1rem 1fr; gap: 0.8rem; }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .attend-toggle { grid-template-columns: 1fr; }
+  .couple-names { font-size: clamp(3.5rem, 18vw, 6rem); }
+}

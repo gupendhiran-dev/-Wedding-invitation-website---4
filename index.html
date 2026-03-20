@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sophia & Ethan — Our Love Story</title>
+  <meta name="description" content="Join us for the most magical day of our lives. A Pixar-style wedding invitation for Sophia & Ethan." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/animations.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ CANVAS LAYER ═══════════════════════════════════ -->
+  <canvas id="world-canvas"></canvas>
+
+  <!-- ═══════════════════════════════════ LOADING SCREEN ═══════════════════════════════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-heart">♥</div>
+      <p class="loader-text">Preparing your love story…</p>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════ SCROLL CONTAINER ═══════════════════════════════════ -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- ── SCENE 1: MAGICAL SKY INTRO ── -->
+      <section class="scene scene-intro" id="scene-intro" data-scene="intro">
+        <div class="scene-overlay"></div>
+        <div class="scene-content centered">
+          <p class="scene-eyebrow reveal-up">You are cordially invited to</p>
+          <h1 class="couple-names reveal-up">
+            <span class="name-one">Sophia</span>
+            <span class="ampersand">&#38;</span>
+            <span class="name-two">Ethan</span>
+          </h1>
+          <p class="tagline reveal-up">Welcome to our love story</p>
+          <button class="begin-btn reveal-up" id="begin-btn">
+            <span>Begin the Journey</span>
+            <div class="btn-sparkle"></div>
+          </button>
+        </div>
+        <div class="scroll-hint">
+          <div class="scroll-arrow"></div>
+          <span>Scroll to explore</span>
+        </div>
+      </section>
+
+      <!-- ── SCENE 2: FLOWER FIELD ── -->
+      <section class="scene scene-flowers" id="scene-flowers" data-scene="flowers">
+        <div class="scene-content">
+          <div class="story-card reveal-up">
+            <div class="photo-frame photo-frame--left">
+              <div class="photo-placeholder photo-1">
+                <span>Your Photo Here</span>
+              </div>
+            </div>
+            <div class="story-text reveal-up">
+              <p class="chapter-label">Chapter One</p>
+              <h2>It all started with<br/><em>a simple hello.</em></h2>
+              <p class="body-text">In the summer of 2019, two worlds collided in the most unexpected place — and nothing was ever the same again.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 3: HOW WE MET ── -->
+      <section class="scene scene-met" id="scene-met" data-scene="met">
+        <div class="scene-content">
+          <p class="chapter-label reveal-up">Chapter Two</p>
+          <h2 class="reveal-up">How We Met</h2>
+          <div class="met-grid">
+            <div class="met-card reveal-up" style="--delay:0.1s">
+              <div class="met-icon">☕</div>
+              <p>A coffee shop<br/>on a rainy Tuesday</p>
+            </div>
+            <div class="met-card reveal-up" style="--delay:0.2s">
+              <div class="met-icon">📚</div>
+              <p>Arguing about<br/>the same book</p>
+            </div>
+            <div class="met-card reveal-up" style="--delay:0.3s">
+              <div class="met-icon">🌆</div>
+              <p>A walk through<br/>city lights</p>
+            </div>
+            <div class="met-card reveal-up" style="--delay:0.4s">
+              <div class="met-icon">💌</div>
+              <p>Late night texts<br/>that never ended</p>
+            </div>
+          </div>
+        </div>
+        <div class="floating-hearts" id="floating-hearts"></div>
+      </section>
+
+      <!-- ── SCENE 4: LOVE GROWS ── -->
+      <section class="scene scene-park" id="scene-park" data-scene="park">
+        <div class="scene-content">
+          <p class="chapter-label reveal-up">Chapter Three</p>
+          <h2 class="reveal-up">Love <em>Grows</em></h2>
+          <div class="milestones">
+            <div class="milestone reveal-left">
+              <div class="milestone-year">2019</div>
+              <div class="milestone-dot"></div>
+              <div class="milestone-desc">First date at Riverside Park</div>
+            </div>
+            <div class="milestone reveal-right">
+              <div class="milestone-year">2020</div>
+              <div class="milestone-dot"></div>
+              <div class="milestone-desc">Moved in together during lockdown</div>
+            </div>
+            <div class="milestone reveal-left">
+              <div class="milestone-year">2021</div>
+              <div class="milestone-dot"></div>
+              <div class="milestone-desc">First trip to Italy 🇮🇹</div>
+            </div>
+            <div class="milestone reveal-right">
+              <div class="milestone-year">2022</div>
+              <div class="milestone-dot"></div>
+              <div class="milestone-desc">Got a puppy named Biscuit 🐶</div>
+            </div>
+            <div class="milestone reveal-left">
+              <div class="milestone-year">2023</div>
+              <div class="milestone-dot"></div>
+              <div class="milestone-desc">The question that changed everything…</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 5: THE PROPOSAL ── -->
+      <section class="scene scene-proposal" id="scene-proposal" data-scene="proposal">
+        <div class="stars-bg" id="stars-bg"></div>
+        <div class="scene-content centered">
+          <p class="chapter-label reveal-up">Chapter Four</p>
+          <h2 class="reveal-up proposal-headline">Under a sky<br/>full of <em>stars</em>…</h2>
+          <div class="proposal-photo reveal-up">
+            <div class="photo-placeholder photo-proposal">
+              <span>Proposal Photo</span>
+            </div>
+          </div>
+          <div class="she-said-yes reveal-up">
+            <span class="yes-text">She said</span>
+            <span class="yes-word">Yes.</span>
+          </div>
+        </div>
+        <div class="heart-burst" id="heart-burst"></div>
+      </section>
+
+      <!-- ── SCENE 6: SAVE THE DATE ── -->
+      <section class="scene scene-date" id="scene-date" data-scene="date">
+        <div class="scene-content centered">
+          <p class="chapter-label reveal-up">Mark Your Calendars</p>
+          <h2 class="reveal-up">Save the Date</h2>
+          <div class="wedding-date-display reveal-up">
+            <span class="date-day">14</span>
+            <span class="date-sep">·</span>
+            <span class="date-month">June</span>
+            <span class="date-sep">·</span>
+            <span class="date-year">2025</span>
+          </div>
+          <div class="countdown-wrapper reveal-up" id="countdown">
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-days">000</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-hours">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-mins">00</span>
+              <span class="countdown-label">Minutes</span>
+            </div>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-secs">00</span>
+              <span class="countdown-label">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 7: WEDDING EVENTS ── -->
+      <section class="scene scene-events" id="scene-events" data-scene="events">
+        <div class="scene-content">
+          <p class="chapter-label reveal-up">Join Us</p>
+          <h2 class="reveal-up">The Celebration</h2>
+          <div class="events-grid">
+            <div class="event-card reveal-up" style="--delay:0.1s">
+              <div class="event-icon">💍</div>
+              <h3>Wedding Ceremony</h3>
+              <p class="event-time">14 June 2025 · 4:00 PM</p>
+              <p class="event-venue">St. Catherine's Chapel</p>
+              <p class="event-addr">123 Rose Garden Lane, Willow Creek</p>
+            </div>
+            <div class="event-card reveal-up" style="--delay:0.2s">
+              <div class="event-icon">🥂</div>
+              <h3>Reception</h3>
+              <p class="event-time">14 June 2025 · 7:00 PM</p>
+              <p class="event-venue">The Grand Conservatory</p>
+              <p class="event-addr">45 Magnolia Blvd, Willow Creek</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 8: PHOTO MEMORIES ── -->
+      <section class="scene scene-photos" id="scene-photos" data-scene="photos">
+        <div class="scene-content">
+          <p class="chapter-label reveal-up">Our Journey</p>
+          <h2 class="reveal-up">Memories</h2>
+          <div class="gallery-grid">
+            <div class="gallery-item reveal-up" style="--delay:0.05s" data-index="0">
+              <div class="gallery-photo"><span>Memory 1</span></div>
+            </div>
+            <div class="gallery-item reveal-up" style="--delay:0.1s" data-index="1">
+              <div class="gallery-photo"><span>Memory 2</span></div>
+            </div>
+            <div class="gallery-item reveal-up" style="--delay:0.15s" data-index="2">
+              <div class="gallery-photo"><span>Memory 3</span></div>
+            </div>
+            <div class="gallery-item reveal-up" style="--delay:0.2s" data-index="3">
+              <div class="gallery-photo"><span>Memory 4</span></div>
+            </div>
+            <div class="gallery-item reveal-up" style="--delay:0.25s" data-index="4">
+              <div class="gallery-photo"><span>Memory 5</span></div>
+            </div>
+            <div class="gallery-item reveal-up" style="--delay:0.3s" data-index="5">
+              <div class="gallery-photo"><span>Memory 6</span></div>
+            </div>
+          </div>
+        </div>
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+          <button class="lightbox-close" id="lightbox-close">✕</button>
+          <div class="lightbox-img-wrap"><div class="lightbox-img" id="lightbox-img"></div></div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 9: VENUE MAP ── -->
+      <section class="scene scene-venue" id="scene-venue" data-scene="venue">
+        <div class="scene-content">
+          <p class="chapter-label reveal-up">Find Us</p>
+          <h2 class="reveal-up">The Venue</h2>
+          <div class="venue-split reveal-up">
+            <div class="venue-info">
+              <h3>St. Catherine's Chapel</h3>
+              <p>123 Rose Garden Lane<br/>Willow Creek, CA 94025</p>
+              <a class="venue-link" href="https://maps.google.com/?q=St+Catherine+Chapel" target="_blank" rel="noopener">Open in Maps →</a>
+            </div>
+            <div class="map-container">
+              <iframe
+                title="Venue Location"
+                width="100%"
+                height="320"
+                style="border:0;border-radius:16px;"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.639!2d-122.0838511!3d37.3860517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb24ca8a25cb3%3A0xe2a0b680a46a7d4!2sSt.+Catherine+of+Alexandria+Catholic+Church!5e0!3m2!1sen!2sus!4v1680000000000">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 10: RSVP ── -->
+      <section class="scene scene-rsvp" id="scene-rsvp" data-scene="rsvp">
+        <div class="scene-content centered">
+          <p class="chapter-label reveal-up">Will You Be There?</p>
+          <h2 class="reveal-up">RSVP</h2>
+          <div class="rsvp-card reveal-up">
+            <div class="rsvp-form" id="rsvp-form">
+              <div class="field-group">
+                <label>Your Name</label>
+                <input type="text" id="rsvp-name" placeholder="Full name" />
+              </div>
+              <div class="field-group">
+                <label>Phone Number</label>
+                <input type="tel" id="rsvp-phone" placeholder="+1 (555) 000-0000" />
+              </div>
+              <div class="field-group">
+                <label>Will you attend?</label>
+                <div class="attend-toggle">
+                  <button class="attend-btn active" data-val="yes" id="attend-yes">
+                    🎉 Joyfully Accept
+                  </button>
+                  <button class="attend-btn" data-val="no" id="attend-no">
+                    😢 Regretfully Decline
+                  </button>
+                </div>
+              </div>
+              <div class="field-group">
+                <label>A message for the couple</label>
+                <textarea id="rsvp-message" rows="3" placeholder="Write something beautiful…"></textarea>
+              </div>
+              <button class="submit-btn" id="rsvp-submit">
+                <span>Send with Love</span>
+                <div class="submit-sparkle"></div>
+              </button>
+            </div>
+            <div class="rsvp-success" id="rsvp-success" style="display:none">
+              <div class="success-icon">💌</div>
+              <h3>Thank you!</h3>
+              <p>Your RSVP has been received. We can't wait to celebrate with you!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SCENE 11: CELEBRATION FINALE ── -->
+      <section class="scene scene-finale" id="scene-finale" data-scene="finale">
+        <div class="scene-content centered">
+          <div class="finale-message reveal-up">
+            <h2>We can't wait to<br/><em>celebrate with you.</em></h2>
+            <p class="body-text">With all our love,</p>
+            <p class="finale-names">Sophia &amp; Ethan</p>
+            <p class="finale-date">14 · June · 2025</p>
+          </div>
+        </div>
+        <div class="fireworks-container" id="fireworks"></div>
+      </section>
+
+    </div><!-- /smooth-content -->
+  </div><!-- /smooth-wrapper -->
+
+  <!-- ═══════════════════════════════════ NAV ═══════════════════════════════════ -->
+  <nav id="top-nav">
+    <div class="nav-logo">S &amp; E</div>
+    <div class="nav-links">
+      <a href="#scene-events">Events</a>
+      <a href="#scene-photos">Gallery</a>
+      <a href="#scene-venue">Venue</a>
+      <a href="#scene-rsvp" class="nav-cta">RSVP</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════ SCRIPTS ═══════════════════════════════════ -->
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <!-- App scripts -->
+  <script src="scripts/particles.js"></script>
+  <script src="scripts/scene-controller.js"></script>
+  <script src="scripts/animations.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>
